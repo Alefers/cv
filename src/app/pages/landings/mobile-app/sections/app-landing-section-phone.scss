@@ -1,0 +1,280 @@
+.app-phone {
+    img {
+        height: auto;
+    }
+    &__main {
+        width: 19.6em;
+    }
+    &__inner {
+        position: absolute;
+        z-index: 1;
+        left: .4em;
+        right: .4em;
+        bottom: .4em;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+        }
+    }
+    &--coupon {
+        .app-phone {
+            &__inner {
+                top: 3.15em;
+                border-radius: 0 0 2.4em 2.4em ;
+            }
+            &__sub-1 {
+                z-index: 2;
+                width: 17.2em;
+                top: .5em;
+                left: .8em;
+            }
+            &__sub-2 {
+                z-index: 1;
+                width: 18em;
+                top: 2.5em;
+                left: .4em;
+            }
+            &__sub-3 {
+                width: 17.2em;
+                top: 8.1em;
+                left: .8em;
+            }
+            &__sub-4 {
+                width: 17.2em;
+                top: 20.8em;
+                left: .8em;
+            }
+            &__sub-5 {
+                z-index: 1;
+                width: 18.8em;
+                bottom: 0;
+                left: 0;
+                border-radius: 0 0 2.4em 2.4em;
+            }
+        }
+    }
+    &--vip {
+        .app-phone {
+            &__inner {
+                top: 3.15em;
+                border-radius: 0 0 2.4em 2.4em;
+            }
+            &__sub-1 {
+                width: 17.2em;
+                top: .5em;
+                left: .8em;
+            }
+            &__sub-2 {
+                width: 17.2em;
+                top: 13.8em;
+                left: .8em;
+            }
+            &__sub-3 {
+                width: 17.2em;
+                top: 25em;
+                left: .8em;
+            }
+            &__sub-4 {
+                width: 17.2em;
+                top: 33.4em;
+                left: .8em;
+            }
+        }
+    }
+    &--sport {
+        .app-phone {
+            &__inner {
+                top: 5.4em;
+                border-radius: 0 0 2.4em 2.4em;
+            }
+            &__sub-1 {
+                width: 17.2em;
+                top: .8em;
+                left: .8em;
+            }
+            &__sub-2 {
+                width: 21.35em;
+                top: 3.4em;
+                left: .8em;
+            }
+            &__sub-3 {
+                width: 17.2em;
+                top: 6.2em;
+                left: .8em;
+            }
+            &__sub-4 {
+                width: 17.2em;
+                top: 17.05em;
+                left: .8em;
+            }
+            &__sub-5 {
+                width: 17.2em;
+                top: 26.3em;
+                left: .8em;
+            }
+            &__sub-6 {
+                z-index: 3;
+                width: 18.8em;
+                bottom: 0;
+                left: 0;
+                border-radius: 0 0 2.4em 2.4em;
+            }
+        }
+    }
+}
+
+
+.app-land-section__visual-phone--current {
+    .app-phone {
+        &--coupon {
+            .app-phone {
+                &__sub-1 {
+                    animation: 1.2s ease-out sub11FadeIn;
+                }
+                &__sub-2 {
+                    animation: 1.35s ease-out sub12FadeIn;
+                }
+                &__sub-3 {
+                    animation: 1.5s ease-out sub12FadeIn;
+                }
+                &__sub-4 {
+                    animation: 8s ease-in-out sub14FadeIn;
+                }
+                &__sub-5 {
+                    animation: 1.7s ease-out sub15FadeIn;
+                }
+            }
+        }
+        &--vip {
+            .app-phone {
+                &__sub-1 {
+                    animation: 1.2s ease-out sub21FadeIn;
+                }
+                &__sub-2 {
+                    animation: 1.5s ease-out sub22FadeIn;
+                }
+                &__sub-3 {
+                    animation: 1.6s ease-out sub22FadeIn;
+                }
+                &__sub-4 {
+                    animation: 1.7s ease-out sub22FadeIn;
+                }
+            }
+        }
+        &--sport {
+            .app-phone {
+                &__sub-1 {
+                    animation: 1.2s ease-out sub31FadeIn;
+                }
+                &__sub-2 {
+                    animation: 1.4s ease-out sub32FadeIn;
+                }
+                &__sub-3 {
+                    animation: 1.4s ease-out sub33FadeIn;
+                }
+                &__sub-4 {
+                    animation: 1.5s ease-out sub33FadeIn;
+                }
+                &__sub-5 {
+                    animation: 1.6s ease-out sub33FadeIn;
+                }
+                &__sub-6 {
+                    animation: 1.7s ease-out sub33FadeIn;
+                }
+            }
+        }
+    }
+}
+
+
+// coupon
+
+@keyframes sub11FadeIn {
+    0%, 66% {
+        transform: translateY(-6em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes sub12FadeIn {
+    0%, 66% {
+        transform: translateY(-17em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes sub14FadeIn {
+    0%, 20% {
+        transform: translateY(15em);
+    }
+    25% {
+        transform: translateY(5em);
+    }
+    30%, 50%, 70%, 90% {
+        transform: translateY(-.5em);
+    }
+    40%, 60%, 80% {
+        transform: translateY(.5em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes sub15FadeIn {
+    0%, 80% {
+        transform: translateY(20em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+// vip
+
+@keyframes sub21FadeIn {
+    0%, 66% {
+        transform: translateY(-15em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes sub22FadeIn {
+    0%, 66% {
+        transform: translateY(25em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+// sport
+
+@keyframes sub31FadeIn {
+    0%, 66% {
+        transform: translateY(-5em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes sub32FadeIn {
+    0%, 66% {
+        transform: translateX(25em);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes sub33FadeIn {
+    0%, 75% {
+        transform: translateY(30em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

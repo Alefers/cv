@@ -1,0 +1,20 @@
+.app-land-slider-dots {
+    position: absolute;
+    bottom: 16em;
+    right: 18em;
+
+    .app-landing__circle--large {
+        transition: transform .6s ease-in-out;
+        height: 2.3em;
+        width: 2.3em;
+        top: -1.15em;
+        left: -1.15em;
+    }
+    .app-landing__circle--medium {
+        transition: transform .35s ease-in-out;
+        height: 1.3em;
+        width: 1.3em;
+        top: -.65em;
+        left: -.65em;
+    }
+}

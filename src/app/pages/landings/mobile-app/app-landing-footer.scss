@@ -1,0 +1,40 @@
+@import '../../../../assets/variables';
+
+
+.app-land-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 9em;
+
+    .app-landing {
+        &__qr {
+            margin: 0 auto;
+            width: 12.5em;
+        }
+        &__lottie {
+            margin: 0 auto;
+        }
+    }
+    &__image {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            height: 31.8em;
+            width: 27.55em;
+        }
+    }
+    &__info {
+        width: 50%;
+        transform: translateX(-3em);
+    }
+    &__info-inner {
+        width: 30em;
+        text-align: center;
+    }
+    &__info-text {
+        margin-top: 1.25em;
+        font-size: .8em;
+    }
+}

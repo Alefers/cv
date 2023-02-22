@@ -1,0 +1,260 @@
+.app-land-slider-item {
+    position: absolute;
+    height: 30em;
+    width: 30em;
+    right: 3em;
+    bottom: 5em;
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+    z-index: 3;
+
+    img {
+        position: absolute;
+        z-index: 2;
+        height: auto;
+    }
+    &__main-image {
+        z-index: 1;
+    }
+    &.tournaments {
+        .app-land-slider-item {
+            &__main-image {
+                width: 21.55em;
+                right: 2.5em;
+                bottom: 3.5em;
+            }
+            &__sub-image-1 {
+                right: 19em;
+                bottom: 8.5em;
+                width: 15.55em;
+            }
+            &__sub-image-2 {
+                right: 20.25em;
+                bottom: 6em;
+                width: 15.55em;
+            }
+            &__sub-image-3 {
+                right: 21.5em;
+                bottom: 3.5em;
+                width: 15.55em;
+            }
+        }
+    }
+    &.forecasts {
+        .app-land-slider-item {
+            &__main-image {
+                width: 26.4em;
+                right: 4em;
+                bottom: 4.5em;
+            }
+            &__sub-image-1 {
+                right: 20.5em;
+                bottom: 2.5em;
+                width: 17.15em;
+            }
+        }
+    }
+    &.bonuses {
+        .app-land-slider-item {
+            &__main-image {
+                width: 20.1em;
+                right: 5.5em;
+                bottom: 4.5em;
+            }
+            &__sub-image-1 {
+                right: 18.5em;
+                bottom: 5.5em;
+                width: 17.15em;
+            }
+            &__sub-image-2 {
+                right: 20.5em;
+                bottom: 2.6em;
+                width: 17.15em;
+            }
+        }
+    }
+    &.events {
+        .app-land-slider-item {
+            &__main-image {
+                width: 18.95em;
+                right: 5em;
+                bottom: 4em;
+            }
+            &__sub-image-1 {
+                right: 28em;
+                bottom: 3.5em;
+                width: 8.15em;
+            }
+            &__sub-image-2 {
+                right: 21em;
+                bottom: .5em;
+                width: 8.15em;
+            }
+        }
+    }
+    &.vip {
+        .app-land-slider-item {
+            &__main-image {
+                width: 21.05em;
+                right: 3em;
+                bottom: 7em;
+            }
+            &__sub-image-1 {
+                right: 20em;
+                bottom: 5.5em;
+                width: 17.15em;
+            }
+            &__sub-image-2 {
+                right: 22em;
+                bottom: 2.5em;
+                width: 17.15em;
+            }
+        }
+    }
+    &--ready {
+        opacity: 1;
+        z-index: 4;
+
+        .app-land-slider-item {
+            &__main-image {
+                animation-name: mainFadeIn;
+                animation-duration: .3s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-1 {
+                animation-name: item1FadeIn;
+                animation-duration: .3s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-2 {
+                animation-name: item2FadeIn;
+                animation-duration: .4s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-3 {
+                animation-name: item3FadeIn;
+                animation-duration: .5s;
+                animation-timing-function: ease-in-out;
+            }
+        }
+    }
+    &--hidden {
+        opacity: 0;
+        z-index: 3;
+
+        .app-land-slider-item {
+            &__main-image {
+                animation-name: mainFadeOut;
+                animation-duration: .2s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-1 {
+                animation-name: item1FadeOut;
+                animation-duration: .1s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-2 {
+                animation-name: item2FadeOut;
+                animation-duration: .15s;
+                animation-timing-function: ease-in-out;
+            }
+            &__sub-image-3 {
+                animation-name: item3FadeOut;
+                animation-duration: .2s;
+                animation-timing-function: ease-in-out;
+            }
+        }
+    }
+}
+
+
+@keyframes mainFadeIn {
+    0% {
+        transform: translate(2em, 2em);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes item1FadeIn {
+    0%, 33% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes item2FadeIn {
+    0%, 50% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes item3FadeIn {
+    0%, 60% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes mainFadeOut {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(2em, 2em);
+        opacity: 0;
+    }
+}
+
+@keyframes item1FadeOut {
+    0%, 33% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+}
+
+@keyframes item2FadeOut {
+    0%, 50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+}
+
+@keyframes item3FadeOut {
+    0%, 60% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(4em);
+        opacity: 0;
+    }
+}
