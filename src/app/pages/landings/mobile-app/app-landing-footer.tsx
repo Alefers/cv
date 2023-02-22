@@ -1,6 +1,6 @@
 import React from 'react';
-import './app-landing-footer.styl';
-import { __ } from '@nxplatform/helpers';
+import './app-landing-footer.scss';
+import { __ } from '@cv/helpers';
 import MobileLandingAppIcons from './lottie/app-icons';
 import MobileAppQr from './common/mobile-app-qr';
 import { mobAppImgPath } from './common/mobile-app-common';

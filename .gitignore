@@ -6,6 +6,7 @@ tmp
 /out-tsc
 yarn.lock
 yarn-error.log
+*.webp
 
 # dependencies
 node_modules

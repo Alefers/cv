@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './mobile-app-landing-slider.styl';
-import { __, cn } from '@nxplatform/helpers';
+import './mobile-app-landing-slider.scss';
+import { __, cn } from '@cv/helpers';
 import { MobileAppSvg } from '../common/mobile-app-svg';
 import { Subscription, timer } from 'rxjs';
 import MobileAppLandingSliderItem from './app-landing-slide';

@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cv/helpers": ["helpers/src/index.ts"],
-      "@cv/svg-icons": ["svg-icons/src/index.ts"]
+      "@cv/helpers": ["libs/helpers/src/index.ts"],
+      "@cv/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

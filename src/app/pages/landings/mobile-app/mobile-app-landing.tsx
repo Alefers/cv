@@ -1,14 +1,14 @@
 import React from 'react';
-import './mobile-app-landing.styl';
-import './mobile-app-landing-defaults.styl';
-import { LazyImage } from '@nxplatform/platform-common';
-import { __ } from '@nxplatform/helpers';
+import './mobile-app-landing.scss';
+import './mobile-app-landing-defaults.scss';
 import MobileLandingAppIcons from './lottie/app-icons';
 import MobileAppLandingSlider from './slider/mobile-app-landing-slider';
 import { AppLandingDecorSet } from './common/app-landing-decor-set';
 import { MobileAppLandingFooter } from './app-landing-footer';
 import MobileAppQr from './common/mobile-app-qr';
 import AppLandingSections from './sections/app-landing-sections';
+import { __ } from '@cv/helpers';
+import { LazyImage } from '@cv/ui';
 
 
 const MobileAppLanding: React.FC = () => {

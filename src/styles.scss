@@ -1,7 +1,23 @@
-body, html {
-    min-height: 100%;
+@import "assets/variables";
 
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.25;
+    color: $mainColor;
+    min-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
+
+html {
+    min-height: 100%;
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }

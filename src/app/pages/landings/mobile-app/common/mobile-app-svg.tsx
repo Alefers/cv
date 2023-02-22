@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@nxplatform/helpers';
+import { cn } from '@cv/helpers';
 
 
 interface MobileAppSvgProps {

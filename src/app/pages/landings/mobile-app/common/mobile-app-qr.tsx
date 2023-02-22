@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { LazyImage, UIModalPortal } from '@nxplatform/platform-common';
 import { mobAppImgPath } from './mobile-app-common';
+import { LazyImage } from '@cv/ui';
 
 
 const MobileAppQr: React.FC = () => {
@@ -21,22 +21,22 @@ const MobileAppQr: React.FC = () => {
           alt='qr'
         />
       </div>
-      {windowOpen && (
-        <UIModalPortal
-          identifier="mobile-app-qr"
-          onClose={() => toggleWindow(false)}
-          closeOnEscape
-        >
-          <div className="app-landing__qr-modal">
-            <img
-              height={754}
-              width={754}
-              src={path}
-              alt='qr'
-            />
-          </div>
-        </UIModalPortal>
-      )}
+      {/*{windowOpen && (*/}
+      {/*  <UIModalPortal*/}
+      {/*    identifier="mobile-app-qr"*/}
+      {/*    onClose={() => toggleWindow(false)}*/}
+      {/*    closeOnEscape*/}
+      {/*  >*/}
+      {/*    <div className="app-landing__qr-modal">*/}
+      {/*      <img*/}
+      {/*        height={754}*/}
+      {/*        width={754}*/}
+      {/*        src={path}*/}
+      {/*        alt='qr'*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*  </UIModalPortal>*/}
+      {/*)}*/}
     </>
   );
 };

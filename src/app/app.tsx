@@ -1,5 +1,6 @@
 import s from './app.module.scss';
 import { checkWebpSupport } from '@cv/helpers';
+import MobileAppLanding from './pages/landings/mobile-app/mobile-app-landing';
 
 
 checkWebpSupport();
@@ -7,7 +8,7 @@ checkWebpSupport();
 export function App() {
   return (
     <>
-      <div className={s.app} />
+      <MobileAppLanding />
     </>
   );
 }

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './app-landing-slide.styl';
-import { cn } from '@nxplatform/helpers';
+import './app-landing-slide.scss';
+import { cn, generateWebpPath } from '@cv/helpers';
 import { Subscription, timer } from 'rxjs';
-import { generateWebpPath } from '@nxplatform/platform-settings';
 import { AppLandSlideStatus } from '../common/mobile-app-common';
 
 

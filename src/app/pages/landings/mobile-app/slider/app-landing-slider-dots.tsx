@@ -1,57 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import './app-landing-slider-dots.styl';
-import { Subscription, timer } from 'rxjs';
+import './app-landing-slider-dots.scss';
 
 
-const posMap = {
+interface Coords {
+  x: number;
+  y: number;
+}
+
+interface Position {
+  big: Coords;
+  medium: Coords;
+}
+
+const posMap: {[key: number]: Position} = {
   1: {
     big: {
-      x1: 8,
-      y1: 8.5,
+      x: 8,
+      y: 8.5,
     },
     medium: {
-      x1: -12.5,
-      y1: -6.5,
+      x: -12.5,
+      y: -6.5,
     },
   },
   2: {
     big: {
-      x1: 11.5,
-      y1: 3,
+      x: 11.5,
+      y: 3,
     },
     medium: {
-      x1: -8,
-      y1: 10,
+      x: -8,
+      y: 10,
     },
   },
   3: {
     big: {
-      x1: -13.5,
-      y1: -3,
+      x: -13.5,
+      y: -3,
     },
     medium: {
-      x1: 10,
-      y1: 5.5,
+      x: 10,
+      y: 5.5,
     },
   },
   4: {
     big: {
-      x1: 9.5,
-      y1: -9,
+      x: 9.5,
+      y: -9,
     },
     medium: {
-      x1: -3.5,
-      y1: 11,
+      x: -3.5,
+      y: 11,
     },
   },
   5: {
     big: {
-      x1: -12,
-      y1: -0.5,
+      x: -12,
+      y: -0.5,
     },
     medium: {
-      x1: 8,
-      y1: 8.5,
+      x: 8,
+      y: 8.5,
     },
   },
 }
@@ -69,14 +78,9 @@ const AppLandingSliderDots: React.FC<AppLandingSliderDotsProps> = (
   const bigPos = posMap[current].big;
 
   useEffect(() => {
-    const subscription = new Subscription();
+    const timout = setTimeout(() => setMediumPos(posMap[current].medium), 300);
 
-    subscription.add(
-      timer(300)
-      .subscribe(() => setMediumPos(posMap[current].medium)),
-    );
-
-    return () => subscription.unsubscribe();
+    return () => clearTimeout(timout);
   }, [current]);
 
   return (
@@ -87,13 +91,13 @@ const AppLandingSliderDots: React.FC<AppLandingSliderDotsProps> = (
         <div
           className="app-landing__circle app-landing__circle--large"
           style={{
-            transform: `translate(${bigPos.x1}em, ${bigPos.y1}em)`,
+            transform: `translate(${bigPos.x}em, ${bigPos.y}em)`,
           }}
         />
         <div
           className="app-landing__circle app-landing__circle--medium"
           style={{
-            transform: `translate(${mediumPos.x1}em, ${mediumPos.y1}em)`,
+            transform: `translate(${mediumPos.x}em, ${mediumPos.y}em)`,
           }}
         />
       </div>
