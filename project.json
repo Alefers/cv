@@ -9,7 +9,9 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/cv"
+        "outputPath": "dist/cv",
+        "webpackConfig": "webpack.config.js",
+        "isolatedConfig": true
       },
       "configurations": {
         "development": {

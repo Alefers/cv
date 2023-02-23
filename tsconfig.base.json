@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@cv/helpers": ["libs/helpers/src/index.ts"],
+      "@cv/icons": ["libs/icons/src/index.ts"],
       "@cv/ui": ["libs/ui/src/index.ts"]
     }
   },

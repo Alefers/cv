@@ -1,7 +1,6 @@
 import React from 'react';
 import './app-landing-footer.scss';
 import { __ } from '@cv/helpers';
-import MobileLandingAppIcons from './lottie/app-icons';
 import MobileAppQr from './common/mobile-app-qr';
 import { mobAppImgPath } from './common/mobile-app-common';
 
@@ -27,7 +26,6 @@ export const MobileAppLandingFooter: React.FC = () => {
               {__('App landing_._Bottom_._Bottom text')}
             </span>
           </div>
-          <MobileLandingAppIcons />
           <MobileAppQr />
         </div>
       </div>

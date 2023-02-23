@@ -1,7 +1,6 @@
 import React from 'react';
 import './mobile-app-landing.scss';
 import './mobile-app-landing-defaults.scss';
-import MobileLandingAppIcons from './lottie/app-icons';
 import MobileAppLandingSlider from './slider/mobile-app-landing-slider';
 import { AppLandingDecorSet } from './common/app-landing-decor-set';
 import { MobileAppLandingFooter } from './app-landing-footer';
@@ -20,7 +19,6 @@ const MobileAppLanding: React.FC = () => {
             {__('App landing_._Banner_._All sports and casino in one APP')}
           </h1>
           <div className="app-landing__banner-inner">
-            <MobileLandingAppIcons />
             <div className="app-landing__banner-text">
               {__('App landing_._Banner_._Scan the qr-code and follow the download link')}
             </div>
