@@ -1,0 +1,39 @@
+.wrapper {
+    width: 35px;
+    height: 8px;
+    position: relative;
+}
+.dots {
+    display: flex;
+}
+.dots.two {
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-name: rotateDots;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.dots.three {
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-duration: 2s;
+    animation-name: rotateDots;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.dot {
+    margin: 0 2px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #1A2B33;
+}
+@keyframes rotateDots {
+    0%, 50% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
