@@ -4,6 +4,8 @@ declare global {
   }
 }
 
+export const getIsMobile = () => false;
+
 const supportsWebp = async (): Promise<boolean> => {
   if (!self.createImageBitmap) return false;
 

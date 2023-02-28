@@ -18,6 +18,7 @@
       "@cv/common": ["libs/common/src/index.ts"],
       "@cv/helpers": ["libs/helpers/src/index.ts"],
       "@cv/icons": ["libs/icons/src/index.ts"],
+      "@cv/settings": ["libs/settings/src/index.ts"],
       "@cv/ui": ["libs/ui/src/index.ts"]
     }
   },

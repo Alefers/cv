@@ -1,15 +1,21 @@
-import s from './app.module.scss';
 import { checkWebpSupport } from '@cv/helpers';
-import MobileAppLanding from './pages/landings/mobile-app/mobile-app-landing';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { cvReducers } from '../../libs/common/src/lib/store';
+import { Provider } from 'react-redux';
+import AppRouter from './router/app-router';
 
 
 checkWebpSupport();
 
+const store = configureStore({
+  reducer: combineReducers(cvReducers),
+})
+
 export function App() {
   return (
-    <>
-      <MobileAppLanding />
-    </>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   );
 }
 

@@ -6,7 +6,7 @@ import { LazyImage } from '@cv/ui';
 const MobileAppQr: React.FC = () => {
   const [windowOpen, toggleWindow] = useState(false);
 
-  const path = mobAppImgPath(`/assets/landings/mobile-app/qr.jpg`);
+  const path = mobAppImgPath(`/assets/landings/mobile-app/qr.png`);
 
   return (
     <>
@@ -15,8 +15,8 @@ const MobileAppQr: React.FC = () => {
         onClick={() => toggleWindow(true)}
       >
         <LazyImage
-          height={754}
-          width={754}
+          height={300}
+          width={300}
           src={path}
           alt='qr'
         />

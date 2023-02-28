@@ -1,0 +1,15 @@
+@import "src/assets/variables";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.content {
+    height: 69px;
+    position: relative;
+    display: flex;
+    background: $headerBg;
+    color: $headerText;
+}

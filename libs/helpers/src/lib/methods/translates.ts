@@ -1,47 +1,49 @@
-import { createSelector } from '@reduxjs/toolkit';
-
+interface TranslatesMap {
+  [key1: string]: {
+    [key2: string]: {
+      [key3: string]: string;
+    };
+  };
+}
 
 declare global {
   interface Window {
-    translates: { [key: string]: string };
+    translates: TranslatesMap;
   }
 }
+
+type TranslateModifiers = [string, string, string];
 
 const translateSeparator = '_._';
 const getTranslates = () => window.translates;
 
-export const selectTranslatableData = createSelector(
-  getTranslates,
-  (translates, section: string) => section?.toLowerCase() || '',
-  (translates, section, category: string) => category?.toLowerCase() || '',
-  (translates, section, category, name: string) => name || '',
-  (translates, section, category, name) => {
-    try {
-      const translatableSection = translates[section];
-      return (
-        translatableSection[category][name]
-        || translatableSection[category][name.toLowerCase()]
-        || name
-      );
-    } catch (e) {
-      return name;
-    }
-  },
-);
-
-export const __ = (name: string, vars?: { [key: string]: string }) => {
-  const modifiedNameArr: string[] = `${name || ''}`.split(translateSeparator);
-
-  let trString = selectTranslatableData(
-    getTranslates(),
-    modifiedNameArr[0],
-    modifiedNameArr[1],
-    modifiedNameArr[2],
-  );
-
-  if (modifiedNameArr && modifiedNameArr.length === 1) {
+export const selectTranslatableData = (modifiers: TranslateModifiers) => {
+  const translates = getTranslates();
+  const [section, category, name] = modifiers;
+  try {
+    const translatableSection = translates[section.toLowerCase()];
+    return (
+      translatableSection[category.toLowerCase()][name]
+      || translatableSection[category.toLowerCase()][name.toLowerCase()]
+      || name
+    );
+  } catch (e) {
     return name;
   }
+};
+
+export const __ = (name: string, vars?: { [key: string]: string }) => {
+  if (typeof name !== 'string') {
+    return name;
+  }
+
+  const modifiedNameArr: string[] = name.split(translateSeparator);
+
+  if (modifiedNameArr.length !== 3) {
+    return name;
+  }
+
+  let trString = selectTranslatableData(modifiedNameArr as TranslateModifiers);
 
   try {
     if (vars) {
@@ -49,11 +51,8 @@ export const __ = (name: string, vars?: { [key: string]: string }) => {
         trString = trString.replace(`%${key}%`, vars[key]);
       });
     }
-    return typeof trString === 'string' ? trString : '';
+    return trString;
   } catch (e) {
-    if (modifiedNameArr[2]) {
-      return modifiedNameArr[2];
-    }
-    return name;
+    return modifiedNameArr[2] || name;
   }
 };
