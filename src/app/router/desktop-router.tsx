@@ -3,6 +3,7 @@ import MainLayout from '../layouts/main-layout';
 import MobileAppLanding from '../pages/landings/mobile-app/mobile-app-landing';
 import MainPage from '../pages/main/main.page';
 import { appRoutes } from '@cv/helpers';
+import ButtonsPage from '../pages/buttons/buttons.page';
 
 
 export const getDesktopRouter = (): RouteObject[] => {
@@ -21,7 +22,7 @@ export const getDesktopRouter = (): RouteObject[] => {
         },
         {
           path: appRoutes.buttons,
-          element: <MobileAppLanding />
+          element: <ButtonsPage />
         }
       ]
     }

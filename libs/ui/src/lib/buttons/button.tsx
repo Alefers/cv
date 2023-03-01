@@ -1,4 +1,5 @@
 import React, { memo, SyntheticEvent, useEffect, useMemo, useState } from 'react';
+import s from './button.module.scss';
 import { SvgBg } from '../images/svg-bg';
 import { DotLoader } from '../loaders/dot-loader';
 import { Link } from 'react-router-dom';
@@ -42,6 +43,7 @@ const Button = (
 
   const commonProps = {
     className: cn([
+      s.ttt,
       'ui-button',
       className,
       classModifiers,
@@ -52,10 +54,10 @@ const Button = (
 
   const innerContent = useMemo(() => (
     <>
-      {!modifiers.find(mod => mod === 'classic-default' || mod === 'classic-outline') && (
+      {!modifiers.find((mod) => (mod === 'classic-default' || mod === 'classic-outline')) && (
         <SvgBg customRadius={borderRadius}/>
       )}
-      <span className="app-button__inner">
+      <span className="ui-button__inner">
         {text}
       </span>
     </>
@@ -69,6 +71,8 @@ const Button = (
             <a
               href={link}
               {...commonProps}
+              target="_blank"
+              rel="nofollow"
             >
               {innerContent}
             </a>
@@ -98,4 +102,8 @@ const Button = (
   );
 };
 
-export default memo(Button);
+const _Button =  memo(Button);
+
+export {
+  _Button as Button,
+};

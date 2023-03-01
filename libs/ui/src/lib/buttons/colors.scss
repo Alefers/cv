@@ -1,0 +1,223 @@
+$bodyBgColor: #05071A;
+
+$white: #FFFFFF;
+$lightWhite: #F3F3F3;
+$yellow: #FDE036;
+$red: #E93E3A;
+$redHover: #FF5151;
+$darkRed: #8d0c09;
+$grayBlue: #32333F;
+$lightGrayBlue: #242632;
+$green: #00982B;
+
+$textActive: #FFFAF3;
+$textInactive: #94897A;
+$textIconInactive: #D4C5B1;
+$textDark: #322E2F;
+$iconColor: #FFF5D6;
+$textLight: #FEC882;
+$linkInactive: #A8A8A8;
+
+$mainActiveColor: #FCC211;
+$mainActiveColorHover: #FFDC24;
+
+$iconRed: $red;
+
+$error: $red;
+$errorBg: #FFE8E7;
+$success: #00AB30;
+$successBg: #D1FFC0;
+$warning: #F59300;
+$warningBg: #FFF5C1;
+
+$searchInputShadow: #4B4C56;
+$mobileCabinetBg: #191B28;
+
+$bonusPrimaryColor: $green;
+$bonusSecondaryColor: #33da5b;
+
+// Menu
+$menuItemsBg: #181E29;
+$asideNavBg: $menuItemsBg;
+$mobileMenuBg: #111323;
+$mobileMenuOpenerBorder: #E11717;
+$mobileMenuOpenerBgStart: #FFF1BD;
+$mobileMenuOpenerBgEnd: #FFCDB0;
+$mobileMenuOpener: #4E3535;
+
+// Button colors
+$buttonMain: $mainActiveColor;
+$buttonSecondary: $red;
+$loginButton: #23293a;
+$loginButtonHover: #606678;
+$loginLightButton: #606678;
+$buttonDisabled: #c3ccd9;
+
+// Text colors
+$mainColor: #072443;
+$menuSectionBorder: #c3ccd9;
+
+// Modal
+$modalShadow: 0 5px 180px rgba(254, 200, 130, .3);
+$notificationBorderError: $red;
+$darkModalBg: #1A1B29;
+$darkModalBorder: #23293A;
+$darkModalShadow: #000000;
+
+// Icons
+$inputColor: #4E4842;
+$inputFocusBg: #EEEFF3;
+$inputDisabled: $inputColor;
+$inputDisabledBg: lighten($textIconInactive, 30%);
+$inputBackgroundForm: $white;
+$inputPlaceholderColor: rgba($grayBlue, .5);
+$inputErrorColor: $error;
+$inputErrorBg: $errorBg;
+$inputImageColor: #303955;
+$dropDownTextColor: #6e82a2;
+$dropDownTextActiveColor: #edf1f3;
+$producerIconBg: #231F1F;
+$inputShadow: rgba(#4C3E66, .15);
+$inputBg: #E0E1EA;
+
+$currencyDropdownBg: #edf1f3;
+$currencyDropdownIcon: #072443;
+
+$tableGold: #F6CA59;
+$tableSilver: #D1D1D1;
+$tableBronze: #E8C29F;
+
+$pedestalGold: $mainActiveColor;
+$pedestalSilver: #C7C7C7;
+$pedestalBronze: #BE8D69;
+
+// Text page
+$textPageHeading: $mainActiveColor;
+$textPageText: $textIconInactive;
+$textPageLink: $mainActiveColor;
+$textPageListElements: $mainActiveColor;
+$textPageTableHeadingBg: $textDark;
+$textPageTableHeading: $mainActiveColor;
+$textPageTableBody: $textIconInactive;
+$textPageTableBodyBg: rgba($inputColor, .6);
+$textPageTableBodyBorder: $bodyBgColor;
+
+// Cabinet History
+$transactionPositive: $bonusSecondaryColor;
+$transactionNegative: #FF8484;
+
+// Lame box
+$gameBoxContentBg: #020304;
+$gameBoxControlsBg: #010301;
+
+// Latest winners
+$latestWinnersText: #aaa8a9;
+
+$headerMenuTogglerBg: #1B1D2C;
+$headerMenuTogglerBorder: #404256;
+
+$mainBannerControlBorder: #41444A;
+$mainNewGamesFlame: #FEA800;
+$vipBgFront: #A71D1D;
+$vipBgBack: #FE9800;
+$categoryHoverBg: #1A1F26;
+$producersOpenerBg: #1B1C29;
+
+$formColor: #1A1C29;
+
+$liveBlockBlackjack: #1A1F2D;
+$liveBlockClassic: #302525;
+$liveBlockPoker: #1F2928;
+$liveBlockRoulette: #372637;
+
+$controlButtonBg: #0C0E22;
+$controlButtonBorder: #48455B;
+$controlButtonArrow: #5C5871;
+
+$promoSliderArrowBg: #63A09E;
+$promoSliderArrowBorder: #092827;
+
+$tournamentSliderArrowBg: #E3DEF5;
+$tournamentActionLink: #464545;
+
+$userAccountExpScaleBg: #3A435A;
+$userAccountLevel: #23293A;
+
+$userAccountHeaderMenuLink: $mobileCabinetBg;
+$userAccountHeaderMenuLinkHover: #2E313B;
+$userAccountStatsBg: $mobileCabinetBg;
+$userAccountSlidersBg: #292A36;
+
+$nextPrizeTitleBg: #151A29;
+$nextPrizeTitleBorder: #2A2D3C;
+
+$radioSelectBg: #fbfbfb;
+
+$tableTh: $formColor;
+$tableTdBg: $white;
+
+$swipeCheckboxBg: $lightGrayBlue;
+$termsBg: $menuItemsBg;
+$termsOpenBg: $textActive;
+$terms: #BEC0CA;
+
+
+$schemeDefault: $red;
+$schemeDefaultBg: #5c0c0a;
+$schemeDefaultGStart: #027B48;
+$schemeDefaultGStop: #007972;
+
+$schemeGreen: #027C49;
+$schemeGreenBg: #027C49;
+$schemeGreenGStart: #027B48;
+$schemeGreenGStop: #007972;
+
+$schemeYellow: $mainActiveColor;
+$schemeYellowBg: #735701;
+$schemeYellowGStart: #027B48;
+$schemeYellowGStop: #007972;
+
+$schemeViolet: #FBA1FF;
+$schemeVioletBg: #4b004e;
+$schemeVioletGStart: #027B48;
+$schemeVioletGStop: #007972;
+
+$schemeBlue: #11EEFC;
+$schemeBlueBg: #0A1033;
+$schemeBlueGStart: #027B48;
+$schemeBlueGStop: #007972;
+
+
+$promoPageItemSecondary: #CDE2D6;
+$StepAsIconsArrow: #353640;
+
+// promo
+$promoItemBgStrokeDefault: $mainActiveColor;
+$promoSectionMobileBg: #194451;
+$tournamentSectionMobileBg: #361943;
+
+$buttonBonusGStart: $bonusSecondaryColor;
+$buttonBonusGStop: $bonusPrimaryColor;
+
+// acc promo
+$accPromoMoneyGStart: #7B0260;
+$accPromoMoneyGStop: #440079;
+
+//tournament
+$tournamentItemBgStrokeDefault: $mainActiveColor;
+$tournamentItemBgFillDefault: #071035;
+$tournamentPlacesBgFrom: #FFB84A;
+$tournamentPlace1: #FCC211;
+$tournamentPlace2: #C7C7C7;
+$tournamentPlace3: #BE8D69;
+
+//vip
+$vipCountdownItemBg: $bodyBgColor;
+$vipCountdownItemBorder: #373948;
+$vipTableRowBg: $termsBg;
+$vipPageBg: #5F0000;
+
+//footer
+$footer: #858b99;
+$footerTopColor: $footer;
+$footerMenuBorder: $menuItemsBg;

@@ -27,10 +27,14 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   const [symbol, setSymbol] = useState<IconSymbol | null>(null);
 
   useEffect(() => {
-    // @ts-ignore
-    cancellablePromise(icon).then((module) => {
-      setSymbol(() => module.default);
-    }).catch(() => {});
+    if (typeof icon === 'function') {
+      // @ts-ignore
+      cancellablePromise(icon).then((module) => {
+        setSymbol(() => module.default);
+      }).catch((e) => {console.log(e);});
+    } else {
+      console.log('Icon not exist');
+    }
   }, [icon]);
 
   return (
@@ -46,7 +50,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
       )}
       {!symbol && (
         <svg
-          className={`svg-icon svg-icon__placeholder ${modifier}`}
+          className={`svg-icon svg-icon--placeholder ${modifier}`}
           onClick={onClick}
         />
       )}

@@ -45,6 +45,10 @@ li {
     display: block;
 }
 
+img {
+    display: block;
+}
+
 a {
     text-decoration: none;
     outline: none;
@@ -89,6 +93,18 @@ input[type=number] {
     &--center {
         align-items: center;
     }
+    &--h1 {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    &--h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    &--h3 {
+        font-size: 24px;
+        font-weight: 500;
+    }
 }
 
 .svg-icon {
@@ -96,6 +112,27 @@ input[type=number] {
     width: 1em;
     height: 1em;
     fill: currentColor;
+
+    &--placeholder {
+        background: red;
+    }
+}
+
+.svg-bg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.svg-bg-container,
+.bg-layer {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 body {

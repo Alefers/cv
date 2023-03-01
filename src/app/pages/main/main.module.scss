@@ -1,0 +1,11 @@
+@import "src/assets/variables";
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 24px 40px;
+}

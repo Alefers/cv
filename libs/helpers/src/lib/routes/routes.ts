@@ -1,5 +1,5 @@
 export const appRoutes = {
-  main: '/',
+  home: '/',
   landing: '/landing',
   buttons: '/buttons',
 };

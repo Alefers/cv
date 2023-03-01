@@ -2,10 +2,10 @@
 // DO NOT EDIT IT MANUALLY
   
 export const svgIconsMap = {
-  Blocked: () => import('./svg/blocked.svg'),
-  Calendar: () => import('./svg/calendar.svg'),
+  Buttons: () => import('./svg/buttons.svg'),
   Feather: () => import('./svg/feather.svg'),
   Flame: () => import('./svg/flame.svg'),
   Game: () => import('./svg/game.svg'),
   Hamburger: () => import('./svg/hamburger.svg'),
+  Template: () => import('./svg/template.svg'),
 } as const;

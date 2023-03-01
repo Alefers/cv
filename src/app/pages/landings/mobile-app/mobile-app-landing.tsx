@@ -16,11 +16,11 @@ const MobileAppLanding: React.FC = () => {
       <div className="app-landing__content">
         <div className="app-landing__banner">
           <h1>
-            {__('App landing_._Banner_._All sports and casino in one APP')}
+            {__('App landing_._Banner_._Landing created only by css animations')}
           </h1>
           <div className="app-landing__banner-inner">
             <div className="app-landing__banner-text">
-              {__('App landing_._Banner_._Scan the qr-code and follow the download link')}
+              {__('App landing_._Banner_._Currently only desktop version, mobile on the way')}
             </div>
             <MobileAppQr />
           </div>

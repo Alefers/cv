@@ -10,8 +10,7 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/cv",
-        "webpackConfig": "webpack.config.js",
-        "isolatedConfig": true
+        "webpackConfig": "webpack.config.js"
       },
       "configurations": {
         "development": {
@@ -26,11 +25,13 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "cv:build"
+        "buildTarget": "cv:build",
+        "webpackConfig": "webpack.config.js"
       },
       "configurations": {
         "development": {
           "buildTarget": "cv:build:development",
+          "webpackConfig": "webpack.config.js",
           "hmr": true
         },
         "production": {
