@@ -3,7 +3,7 @@ import s from './button.module.scss';
 import { SvgBg } from '../images/svg-bg';
 import { DotLoader } from '../loaders/dot-loader';
 import { Link } from 'react-router-dom';
-import { cn } from '@cv/helpers';
+import { cn } from '@repo/helpers';
 
 
 interface ButtonProps {

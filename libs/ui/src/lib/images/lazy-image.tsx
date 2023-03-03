@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react';
-import { generateWebpPath } from '@cv/helpers';
+import { generateWebpPath } from '@repo/helpers';
 
 
 interface LazyImageProps {

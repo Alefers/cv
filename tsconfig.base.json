@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cv/common": ["libs/common/src/index.ts"],
-      "@cv/helpers": ["libs/helpers/src/index.ts"],
-      "@cv/icons": ["libs/icons/src/index.ts"],
-      "@cv/settings": ["libs/settings/src/index.ts"],
-      "@cv/ui": ["libs/ui/src/index.ts"]
+      "@repo/common": ["libs/common/src/index.ts"],
+      "@repo/helpers": ["libs/helpers/src/index.ts"],
+      "@repo/icons": ["libs/icons/src/index.ts"],
+      "@repo/settings": ["libs/settings/src/index.ts"],
+      "@repo/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

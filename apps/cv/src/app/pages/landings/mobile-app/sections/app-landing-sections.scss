@@ -1,0 +1,422 @@
+@import "../../../../../assets/styles/variables";
+
+
+.app-sections {
+    position: relative;
+    height: 350vh;
+
+    &__inner {
+        position: sticky;
+        top: 0;
+    }
+}
+
+
+.app-land-section {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding-top: 69px;
+
+    .app-landing {
+        &__blur {
+            z-index: 1;
+            right: -2.5em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &__bubble {
+            &--orange {
+                z-index: 2;
+            }
+            &--violet {
+                z-index: 3;
+            }
+        }
+        &__circle {
+            z-index: 5;
+
+            &--small {
+                height: 1em;
+                width: 1em;
+            }
+            &--medium {
+                height: 1.6em;
+                width: 1.6em;
+            }
+            &--large {
+                height: 2em;
+                width: 2em;
+            }
+        }
+        &__bubble,
+        &__circle {
+            transition: .5s ease-in-out;
+        }
+    }
+    &__visual {
+        height: 41em;
+        width: calc(50% + 2em);
+        position: relative;
+        z-index: 1;
+    }
+    &__visual-phone {
+        position: absolute;
+        z-index: 6;
+        bottom: 0;
+        right: 6.5em;
+        opacity: 0;
+
+        &--current {
+            z-index: 7;
+            opacity: 1;
+            animation: .7s ease-in-out visualFadeIn;
+        }
+        &--previous {
+            z-index: 7;
+            opacity: 1;
+            animation: .7s ease-in-out visualFadeOut;
+        }
+    }
+    &__image {
+        position: absolute;
+        z-index: 6;
+        bottom: 0;
+        right: 6.5em;
+        width: auto;
+    }
+    &__info {
+        height: 41em;
+        width: calc(50% - 2em);
+        position: relative;
+        z-index: 2;
+    }
+    &__info-inner {
+        width: 29em;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        z-index: 0;
+
+        &--current {
+            opacity: 1;
+            z-index: 1;
+
+            h2 {
+                animation: .7s ease-in-out infoH2FadeIn;
+            }
+            .app-land-section {
+                &__info-text {
+                    animation: .7s ease-in-out infoTextFadeIn;
+                }
+                &__info-icons {
+                    animation: .7s ease-in-out infoIconsFadeIn;
+                }
+            }
+        }
+        &--previous {
+            opacity: 1;
+
+            h2 {
+                animation: 1s ease-in-out infoH2FadeOut;
+            }
+            .app-land-section {
+                &__info-text {
+                    animation: 1s ease-in-out infoTextFadeOut;
+                }
+                &__info-icons {
+                    animation: 1s ease-in-out infoIconsFadeOut;
+                }
+            }
+        }
+    }
+    &__info-text {
+        line-height: 1.7;
+        margin-top: 1em;
+
+        span {
+            font-size: 1.2em;
+        }
+    }
+    &__info-icons {
+        margin-top: 1em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__info-icon {
+        margin: .5em .75em .5em 0;
+        background-color: $white;
+        color: $mobAppPrimaryText;
+        border: .1em solid #F4F5F6;
+        box-sizing: border-box;
+        box-shadow: 0 2em 1.6em -1.2em rgba(15, 15, 15, 0.12);
+        border-radius: .8em;
+        transition: color .2s ease, background-color .2s ease;
+        padding: .5em 1.25em 1.25em;
+        min-width: 5.5em;
+        text-align: center;
+
+        &:hover {
+            background-color: $mobAppOrange;
+            color: $white;
+        }
+        &.hovered {
+            &--3 {
+                &:hover {
+                    background-color: $mobAppViolet;
+                }
+            }
+            &--4 {
+                &:hover {
+                    background-color: #48B660;
+                }
+            }
+        }
+    }
+    &__info-icon-title {
+        font-size: .7em;
+    }
+    &__info-icon-svg {
+        height: 3.75em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .app-landing__icon {
+            &--coupon-fastest {
+                height: 1.75em;
+                width: 3.1em;
+            }
+            &--coupon-multi {
+                height: 1.9em;
+                width: 1.95em;
+            }
+            &--coupon-single {
+                height: 1.75em;
+                width: 1.75em;
+            }
+            &--sport-filter {
+                height: 1.65em;
+                width: 1.6em;
+            }
+            &--sport-international {
+                height: 1.7em;
+                width: 1.65em;
+            }
+            &--sport-live {
+                height: 1.7em;
+                width: 2em;
+            }
+            &--sport-top {
+                height: 1.45em;
+                width: 1.15em;
+            }
+            &--vip-free-bets {
+                height: 1.75em;
+                width: 1.75em;
+            }
+            &--vip-free-spins {
+                height: 1.95em;
+                width: 2.1em;
+            }
+            &--vip-growth {
+                height: 1.75em;
+                width: 1.65em;
+            }
+        }
+    }
+    & + & {
+        margin-top: 8em;
+    }
+    &--current-coupon {
+        .app-landing {
+            &__bubble {
+                &--orange {
+                    height: 32.5em;
+                    right: 9.5em;
+                    bottom: 4.5em;
+                    transform: rotate(215deg);
+                }
+                &--violet {
+                    height: 17.5em;
+                    width: 17.5em;
+                    right: 2em;
+                    bottom: 17em;
+                    transform: rotate(20deg);
+                }
+            }
+            &__circle {
+                &--small {
+                    right: 29.5em;
+                    bottom: 6em;
+                }
+                &--medium {
+                    right: 27.5em;
+                    bottom: 25em;
+                }
+                &--large {
+                    right: 2em;
+                    bottom: 13em;
+                }
+            }
+        }
+    }
+    &--current-vip {
+        .app-landing {
+            &__bubble {
+                &--orange {
+                    width: 18.5em;
+                    height: 40em;
+                    border-radius: 9.25em;
+                    right: 4.75em;
+                    bottom: 3em;
+                    transform: rotate(-15deg);
+                }
+                &--violet {
+                    right: 11em;
+                    bottom: 8.5em;
+                    transform: rotate(-80deg);
+                }
+            }
+            &__circle {
+                &--small {
+                    right: 29.5em;
+                    bottom: 6.5em;
+                }
+                &--medium {
+                    right: 3em;
+                    bottom: 30em;
+                }
+                &--large {
+                    right: 29.5em;
+                    bottom: 31.5em;
+                }
+            }
+        }
+    }
+    &--current-none,
+    &--current-sport {
+        .app-landing {
+            &__bubble {
+                &--orange {
+                    width: 20em;
+                    height: 31em;
+                    border-radius: 10em;
+                    right: 8.5em;
+                    bottom: 4em;
+                    transform: rotate(-45deg);
+                }
+                &--violet {
+                    height: 18em;
+                    width: 18em;
+                    right: 2.5em;
+                    bottom: 6em;
+                    transform: rotate(120deg);
+                }
+            }
+            &__circle {
+                &--small {
+                    right: 27.5em;
+                    bottom: 35.5em;
+                }
+                &--medium {
+                    right: 29em;
+                    bottom: 12.5em;
+                }
+                &--large {
+                    right: 3.5em;
+                    bottom: 24em;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes visualFadeIn {
+    0%, 50% {
+        transform: translateY(30em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes visualFadeOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%, 100% {
+        transform: translateY(-30em);
+        opacity: 0;
+    }
+}
+
+
+@keyframes infoH2FadeIn {
+    0%, 50% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes infoTextFadeIn {
+    0%, 60% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes infoIconsFadeIn {
+    0%, 70% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes infoH2FadeOut {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    11%, 100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+@keyframes infoTextFadeOut {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    22%, 100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+@keyframes infoIconsFadeOut {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    33%, 100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}

@@ -1,14 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "cv",
+  "npmScope": "repo",
   "affected": {
     "defaultBase": "master"
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MjdiOGE5ZWQtMzE0ZS00MDJkLTk3N2ItMzI3MjJlMTgxYmIwfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -20,20 +21,24 @@
     "e2e": {
       "inputs": ["default", "^production"]
     },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
+      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/jest.config.[jt]s"
     ],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
@@ -43,7 +48,7 @@
       "application": {
         "style": "scss",
         "linter": "eslint",
-        "bundler": "vite",
+        "bundler": "webpack",
         "babel": true
       },
       "component": {
@@ -52,9 +57,8 @@
       "library": {
         "style": "scss",
         "linter": "eslint",
-        "unitTestRunner": "jest"
+        "unitTestRunner": "none"
       }
     }
-  },
-  "defaultProject": "cv"
+  }
 }

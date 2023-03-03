@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useMemo } from 'react';
-import { useSvgParamsHook } from '@cv/common';
+import { useSvgParamsHook } from '@repo/common';
 import { FourSidesSvg } from './four-sides-svg';
 
 

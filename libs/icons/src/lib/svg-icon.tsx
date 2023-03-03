@@ -1,7 +1,6 @@
 import React, {
   memo, useState, useEffect,
 } from 'react';
-import { useCancellablePromise } from './cancellable-promise';
 
 
 export type SvgIconType = () => Promise<typeof import('*.svg')>;
@@ -12,26 +11,29 @@ interface SvgIconProps {
   onClick?: () => void;
 }
 
-interface IconSymbol {
-  viewBox: string;
+interface BrowserSpriteSymbol {
   id: string;
+  viewBox: string;
+  content: string;
+  node: SVGSymbolElement;
 }
 
-const SvgIcon: React.FC<SvgIconProps> = ({
-  modifier = '',
-  icon,
-  onClick,
-}) => {
-  const { cancellablePromise } = useCancellablePromise<{ default: IconSymbol }>();
-
-  const [symbol, setSymbol] = useState<IconSymbol | null>(null);
+const SvgIcon: React.FC<SvgIconProps> = (
+  {
+    modifier = '',
+    icon,
+    onClick,
+  }
+) => {
+  const [symbol, setSymbol] = useState<BrowserSpriteSymbol | null>(null);
 
   useEffect(() => {
     if (typeof icon === 'function') {
-      // @ts-ignore
-      cancellablePromise(icon).then((module) => {
-        setSymbol(() => module.default);
-      }).catch((e) => {console.log(e);});
+      icon().then((module) => {
+        if (setSymbol) {
+          setSymbol(JSON.parse(JSON.stringify(module.default)));
+        }
+      }).catch(() => {});
     } else {
       console.log('Icon not exist');
     }

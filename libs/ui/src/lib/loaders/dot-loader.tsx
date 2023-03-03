@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './dot-loader.module.scss';
-import { cn } from '@cv/helpers';
+import { cn } from '@repo/helpers';
 
 
 export const DotLoader = () => (

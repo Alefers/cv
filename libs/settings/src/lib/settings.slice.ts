@@ -29,6 +29,7 @@ export const {
   setAppLoading,
 } = settingsSlice.actions;
 
+// @ts-ignore
 export const getSettingsState = (rootState: unknown): SettingsState => rootState[SETTINGS_FEATURE_KEY];
 
 export const selectAppLoadingState = createSelector(

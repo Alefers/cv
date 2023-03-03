@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectAppLoadingState } from '@cv/settings';
+import { selectAppLoadingState } from '@repo/settings';
 
 
 export const appLoaderClass = 'app-loading';

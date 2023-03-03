@@ -1,0 +1,96 @@
+@import "../../../../assets/styles/variables";
+
+
+.app-landing {
+    h2 {
+        margin: 0;
+        font-size: 2.6em;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+    img {
+        display: block;
+    }
+    &__content {
+        max-width: 68em;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__qr {
+        cursor: pointer;
+        background: $white;
+        border-radius: .5em;
+        overflow: hidden;
+        box-shadow: 0 3.2em 3.2em rgba(31, 47, 70, 0.12);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__qr-modal {
+        max-width: 560px;
+        padding: 30px;
+        background: $white;
+        border-radius: 10px;
+        box-shadow: 0 0 64px rgba(31, 47, 70, 0.12);
+
+        img {
+            display: block;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+    &__blur {
+        position: absolute;
+        height: 37em;
+        width: 37em;
+        border-radius: 50%;
+        background: $white;
+        filter: blur(5em);
+        pointer-events: none;
+    }
+    &__icon {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+        display: block;
+    }
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+
+        &--small {
+            height: .75em;
+            width: .75em;
+            background: linear-gradient(142deg, #E8CDFF, #FFB8BD);
+        }
+        &--medium {
+            height: 1.3em;
+            width: 1.3em;
+            background: linear-gradient(320deg, #8C79F1, #FFBDE9);
+        }
+        &--large {
+            height: 1.4em;
+            width: 1.4em;
+            background: linear-gradient(142deg, #FFE2BC, #FF965C);
+        }
+    }
+    &__bubble {
+        position: absolute;
+
+        &--orange {
+            height: 36em;
+            width: 16.5em;
+            border-radius: 8.25em;
+            background: linear-gradient(14deg, #FF5B21, #FFC8B5);
+        }
+        &--violet {
+            width: 21.5em;
+            height: 21.5em;
+            border-radius: 50% 50% 50% 0;
+            background: linear-gradient(to right, #AE47FF, #D39BFF);
+        }
+    }
+}

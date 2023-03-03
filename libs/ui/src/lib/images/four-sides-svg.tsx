@@ -5,7 +5,7 @@ import {
   SvgGradient,
   SvgGradientType,
   useUIDHook,
-} from '@cv/common';
+} from '@repo/common';
 
 
 interface FourSidesSvgProps {

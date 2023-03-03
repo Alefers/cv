@@ -8,7 +8,7 @@ import { cpus } from 'os';
 const imagePool = new ImagePool(cpus().length);
 
 const imagePaths = glob.sync([
-  'public/**/*.{jpg,png,jpeg}',
+  'apps/**/*.{jpg,png,jpeg}',
 ]);
 
 const handleFile = async (input) => {
