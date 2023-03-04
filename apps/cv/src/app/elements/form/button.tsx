@@ -1,9 +1,7 @@
-import React, { memo, SyntheticEvent, useEffect, useMemo, useState } from 'react';
-import s from './button.module.scss';
-import { SvgBg } from '../images/svg-bg';
-import { DotLoader } from '../loaders/dot-loader';
+import React, { memo, SyntheticEvent, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@repo/helpers';
+import { DotLoader, SvgBg } from '@repo/ui';
 
 
 interface ButtonProps {
@@ -19,8 +17,7 @@ interface ButtonProps {
   clickHandler?: (e?: SyntheticEvent) => void;
 }
 
-export type ButtonTypes = 'outline' | 'default' | 'gradient' | 'classic-default' | 'classic-outline' | 'main' | 'secondary'
-  | 'bonus'| 'light' | 'medium' | 'login' | 'login-light' | 'full' | 'dark' | 'form-dark' | 'small' | 'rotated' | 'glow' | 'reset';
+export type ButtonTypes = 'outline' | 'default' | 'gradient' | 'main' | 'secondary' | 'full' | 'glow';
 
 const Button = (
   {
@@ -36,14 +33,13 @@ const Button = (
     clickHandler,
   }: ButtonProps
 ) => {
-  const setButtonModifiers = () => modifiers.map(buttonType => `ui-button--${buttonType}`).join(' ');
-  const [classModifiers, setModifiers] = useState<string>();
-
-  useEffect(() => setModifiers(setButtonModifiers()), [type, modifiers]);
+  const classModifiers = useMemo(() =>
+      modifiers.map(buttonType => `ui-button--${buttonType}`).join(' ')
+    , [type, modifiers]
+  );
 
   const commonProps = {
     className: cn([
-      s.ttt,
       'ui-button',
       className,
       classModifiers,
@@ -54,9 +50,7 @@ const Button = (
 
   const innerContent = useMemo(() => (
     <>
-      {!modifiers.find((mod) => (mod === 'classic-default' || mod === 'classic-outline')) && (
-        <SvgBg customRadius={borderRadius}/>
-      )}
+      <SvgBg customRadius={borderRadius}/>
       <span className="ui-button__inner">
         {text}
       </span>
@@ -94,7 +88,13 @@ const Button = (
     <button
       type={type || 'button'}
       disabled={!!disabled}
-      {...commonProps}
+      className={cn([
+        'ui-button',
+        className,
+        classModifiers,
+        disabled && 'ui-button--disabled',
+      ])}
+      onClick={clickHandler}
     >
       {innerContent}
       {loader && <DotLoader/>}

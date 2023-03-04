@@ -1,4 +1,4 @@
-@import "assets/styles/variables";
+@import "variables";
 
 
 body {
@@ -86,7 +86,7 @@ input[type=number] {
 
 .heading {
     line-height: 1.1;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     display: flex;
     align-items: flex-start;
 
@@ -166,3 +166,5 @@ body {
         font-weight: bold;
     }
 }
+
+@import "app/elements/common";

@@ -1,0 +1,188 @@
+.ui-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px 30px;
+    position: relative;
+    transition: color .2s ease;
+
+    .svg-bg {
+        stop {
+            transition: stop-color .2s ease;
+        }
+        &__path {
+            transition: fill .2s ease, stroke .2s ease;
+        }
+    }
+    &__inner {
+        display: block;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &.ui-button {
+        &--full {
+            width: 100%;
+        }
+        &--outline,
+        &--default {
+            .svg-bg__path {
+                stroke-width: 2px;
+            }
+        }
+        &--outline {
+            .svg-bg__path {
+                stroke: currentColor;
+                fill: transparent;
+            }
+            &.ui-button {
+                &--main {
+                    color: $accentMain;
+
+                    .svg-bg__path {
+                        fill: rgba($accentMain, 0);
+                        stroke: $accentMain;
+                    }
+                    &:hover {
+                        color: $white;
+
+                        .svg-bg__path {
+                            fill: $accentMain;
+                        }
+
+                    }
+                }
+                &--secondary {
+                    color: $accentSecondary;
+
+                    .svg-bg__path {
+                        fill: rgba($accentSecondary, 0);
+                        stroke: $accentSecondary;
+                    }
+                    &:hover {
+                        color: $white;
+
+                        .svg-bg__path {
+                            fill: $accentSecondary;
+                        }
+                    }
+                }
+            }
+        }
+        &--default {
+            &.ui-button {
+                &--main {
+                    color: $white;
+
+                    .svg-bg__path {
+                        stroke: $accentMain;
+                        fill: $accentMain;
+                    }
+                    &:hover {
+                        .svg-bg__path {
+                            stroke: darken($accentMain, 15);
+                        }
+                    }
+                }
+                &--secondary {
+                    color: $white;
+
+                    .svg-bg__path {
+                        stroke: $accentSecondary;
+                        fill: $accentSecondary;
+                    }
+                    &:hover {
+                        .svg-bg__path {
+                            stroke: darken($accentSecondary, 15);
+                        }
+                    }
+                }
+            }
+        }
+        //&--gradient {
+        //    &.ui-button {
+        //        &--main {
+        //            color: $bodyBgColor;
+        //
+        //            .svg-bg {
+        //                .start,
+        //                .stop {
+        //                    stop-color: $mainActiveColor;
+        //                }
+        //            }
+        //            &:hover {
+        //                .svg-bg {
+        //                    .start {
+        //                        stop-color: #FFC810;
+        //                    }
+        //                    .stop {
+        //                        stop-color: #FFEF5B;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        &--secondary {
+        //            color: $white;
+        //
+        //            .svg-bg {
+        //                .start,
+        //                .stop {
+        //                    stop-color: $red;
+        //                }
+        //            }
+        //            &:hover {
+        //                .svg-bg {
+        //                    .start {
+        //                        stop-color: #A91814;
+        //                    }
+        //                    .stop {
+        //                        stop-color: #EC2520;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        &--bonus {
+        //            color: $white;
+        //
+        //            .svg-bg {
+        //                .start {
+        //                    stop-color: $bonusSecondaryColor;
+        //                }
+        //                .stop {
+        //                    stop-color: $bonusPrimaryColor;
+        //                }
+        //            }
+        //            &:hover {
+        //                .svg-bg {
+        //                    .start {
+        //                        stop-color: $bonusPrimaryColor;
+        //                    }
+        //                    .stop {
+        //                        stop-color: $bonusSecondaryColor;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+        &--glow {
+            .svg-bg {
+                filter: drop-shadow(0 0 12px red);
+            }
+        }
+    }
+    &.ui-button--disabled,
+    &:disabled {
+        pointer-events: none;
+        filter: grayscale(1);
+        opacity: .5;
+    }
+}

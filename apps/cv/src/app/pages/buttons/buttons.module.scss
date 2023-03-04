@@ -1,3 +1,17 @@
 .buttons {
     padding: 24px 40px;
 }
+
+.blocks {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block {
+    width: 100%;
+    padding: 0 20px 30px 0;
+}
+.blockTitle {
+    font-weight: 700;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
