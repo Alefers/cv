@@ -5,22 +5,16 @@
 }
 .dots {
     display: flex;
-}
-.dots.two {
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-name: rotateDots;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-.dots.three {
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation-duration: 2s;
-    animation-name: rotateDots;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+
+    .two {
+        animation: 2s ease-in-out 1s infinite rotateDots;
+    }
+    .three {
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: 2s ease-in-out infinite rotateDots;
+    }
 }
 .dot {
     margin: 0 2px;
@@ -29,6 +23,7 @@
     border-radius: 50%;
     background: #1A2B33;
 }
+
 @keyframes rotateDots {
     0%, 50% {
         transform: rotate(0);

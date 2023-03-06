@@ -3,7 +3,7 @@ import MainLayout from '../layouts/main-layout';
 import MobileAppLanding from '../pages/landings/mobile-app/mobile-app-landing';
 import MainPage from '../pages/main/main.page';
 import { appRoutes } from '@repo/helpers';
-import ButtonsPage from '../pages/buttons/buttons.page';
+import SvgsPage from '../pages/svgs/svgs.page';
 
 
 export const getDesktopRouter = (): RouteObject[] => {
@@ -21,8 +21,8 @@ export const getDesktopRouter = (): RouteObject[] => {
           element: <MobileAppLanding />
         },
         {
-          path: appRoutes.buttons,
-          element: <ButtonsPage />
+          path: appRoutes.svgs,
+          element: <SvgsPage />
         }
       ]
     }

@@ -1,7 +1,12 @@
-.buttons {
+.svgs {
     padding: 24px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
 }
-
+.pageDescription {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
 .blocks {
     display: flex;
     flex-wrap: wrap;

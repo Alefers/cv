@@ -1,0 +1,10 @@
+@function toRGB ($color) {
+    @return red($color) + "," + green($color) + "," + blue($color);
+}
+
+:root {
+    --accentMain: #{$accentMain};
+    --accentSecondary: #{$accentSecondary};
+}
+
+@import "./modules/ui.slider";

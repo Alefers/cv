@@ -1,0 +1,36 @@
+// Layouts
+$mobileMaxWidth: 767px;
+$mobileSmallMaxWidth: 459px;
+$tabletMaxWidth: 1279px;
+
+
+@mixin mobileLayout {
+    @media screen and (max-width: #{$mobileMaxWidth}) {
+        @content;
+    }
+}
+@mixin mobileLayoutSmall {
+    @media screen and (max-width: #{$mobileSmallMaxWidth}) {
+        @content;
+    }
+}
+@mixin tabletLayout {
+    @media screen and (min-width: #{$mobileMaxWidth + 1px}) and (max-width: #{$tabletMaxWidth}) {
+        @content;
+    }
+}
+@mixin desktopLayout {
+    @media screen and (min-width: #{$tabletMaxWidth + 1px}) {
+        @content;
+    }
+}
+@mixin overMobileLayout {
+    @media screen and (min-width: #{$mobileMaxWidth + 1px}) {
+        @content;
+    }
+}
+@mixin belowDesktopLayout {
+    @media screen and (max-width: #{$tabletMaxWidth}) {
+        @content;
+    }
+}

@@ -30,9 +30,9 @@ const Header: React.FC<HeaderProps> = (
             <SvgIcon icon={svgIconsMap.Template} />
             {__('Default_._Pages_._Landing')}
           </Link>
-          <Link className={s.navLink} to={appRoutes.buttons}>
+          <Link className={s.navLink} to={appRoutes.svgs}>
             <SvgIcon icon={svgIconsMap.Buttons} />
-            {__('Default_._Pages_._Buttons')}
+            {__('Default_._Pages_._SVGs')}
           </Link>
         </nav>
       </div>

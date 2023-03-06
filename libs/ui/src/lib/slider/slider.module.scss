@@ -1,0 +1,96 @@
+@import "../styles/layout";
+
+
+.slider {
+    position: relative;
+}
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.content {
+    display: flex;
+    align-items: stretch;
+    transition: transform .7s ease;
+}
+.item {
+    position: relative;
+    opacity: 0;
+    transition: opacity .7s ease;
+    user-select: none;
+
+    &.visible {
+        opacity: 1;
+    }
+}
+.bottomControls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.bottomControlsItem {
+    padding: 5px 4px;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid var(--sliderBottomControlBorder);
+        background: var(--sliderBottomControlBg);
+        transition: border-color .2s ease, background .2s ease;
+    }
+    &.active {
+        &:before {
+            border-color: var(--sliderBottomControlBorderHover);
+            background: var(--sliderBottomControlBgHover);
+        }
+    }
+    &:hover {
+        &:not(.active) {
+            &:before {
+                border-color: var(--sliderBottomControlBorderHover);
+            }
+        }
+    }
+}
+
+.sideControl {
+    position: absolute;
+    top: calc(50% - 15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s ease, filter .3s ease;
+
+    &.prev {
+        right: calc(50% + 400px);
+    }
+    &.next {
+        left: calc(50% + 400px);
+        transform: rotate(180deg);
+    }
+    &:disabled {
+        opacity: .5;
+        filter: blur(3px);
+        pointer-events: none;
+    }
+}
+
+@include tabletLayout {
+    .sideControl {
+        top: calc(100% - 35px);
+
+        &.prev {
+            right: calc(50% + 200px);
+        }
+        &.next {
+            left: calc(50% + 200px);
+        }
+    }
+}
