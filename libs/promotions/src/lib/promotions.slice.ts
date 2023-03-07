@@ -15,15 +15,30 @@ export const initialSettingsState: PromotionsState = {
   promotions: [
     {
       id: 1,
-      title: 'ttt',
+      title: '',
+      settings: {
+        stroke: '#9d32ea',
+        gradientStart: '#027B48',
+        gradientStop: '#007972',
+      }
     },
     {
       id: 2,
-      title: 'ttt',
+      title: '',
+      settings: {
+        stroke: '#96072d',
+        gradientStart: '#0330c0',
+        gradientStop: '#098c85',
+      }
     },
     {
       id: 3,
-      title: 'ttt',
+      title: '',
+      settings: {
+        stroke: '#2bd409',
+        gradientStart: '#9e340e',
+        gradientStop: '#8c11dd',
+      }
     },
   ],
 };

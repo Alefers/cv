@@ -2,6 +2,7 @@
 // DO NOT EDIT IT MANUALLY
   
 export const svgIconsMap = {
+  Arrow: () => import('./svg/arrow.svg'),
   Buttons: () => import('./svg/buttons.svg'),
   Feather: () => import('./svg/feather.svg'),
   Flame: () => import('./svg/flame.svg'),

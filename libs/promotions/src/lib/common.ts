@@ -1,6 +1,5 @@
 export interface ColorSettings {
-  color: string;
-  background: string;
+  stroke: string;
   gradientStart: string;
   gradientStop: string;
 }
@@ -12,8 +11,7 @@ export interface Promotion {
 }
 
 export const defaultPromoColorsSet: ColorSettings = {
-  color: '#027C49',
-  background: '#027C49',
+  stroke: '#027C49',
   gradientStart: '#027B48',
   gradientStop: '#007972',
 }

@@ -66,19 +66,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color .3s ease, filter .3s ease;
+    transition: background-color .3s ease, filter .3s ease, color .3s ease;
+    font-size: 58px;
+    color: var(--sliderSideControl);
 
     &.prev {
         right: calc(50% + 400px);
+        transform: translateY(-50%);
     }
     &.next {
         left: calc(50% + 400px);
-        transform: rotate(180deg);
+        transform: rotate(180deg) translateY(50%);
     }
     &:disabled {
         opacity: .5;
         filter: blur(3px);
         pointer-events: none;
+    }
+    &:hover {
+        color: var(--sliderSideControlHover);
     }
 }
 

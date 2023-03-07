@@ -11,6 +11,7 @@ import React, {
 import s from './slider.module.scss';
 import Swipe from 'react-easy-swipe';
 import { cn } from '@repo/helpers';
+import { SvgIcon, svgIconsMap } from '@repo/icons';
 
 
 export interface UISliderProps {
@@ -180,7 +181,7 @@ const Slider = (
             ])}
             disabled={stepDisabled(StepTypes.next)}
           >
-            next
+            <SvgIcon icon={svgIconsMap.Arrow} />
           </button>
           <button
             onClick={prevPage}
@@ -190,7 +191,7 @@ const Slider = (
             ])}
             disabled={stepDisabled(StepTypes.prev)}
           >
-            prev
+            <SvgIcon icon={svgIconsMap.Arrow} />
           </button>
         </>
       }
