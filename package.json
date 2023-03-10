@@ -5,9 +5,8 @@
   "scripts": {
     "start": "nx serve cv",
     "build": "nx build cv",
-    "dep-graph": "nx dep-graph",
-    "convert-images": "node image-converter.mjs",
-    "convert-icons": "node svg-icons-map-generator.mjs"
+    "dep-graph": "nx graph",
+    "convert-images": "node image-converter.mjs"
   },
   "private": true,
   "dependencies": {

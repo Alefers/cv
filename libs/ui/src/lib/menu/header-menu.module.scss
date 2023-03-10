@@ -1,0 +1,129 @@
+.menu {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    .item {
+        align-items: center;
+        display: flex;
+        position: relative;
+
+        &:nth-child(1n + 2) {
+            margin-left: 15px;
+        }
+    }
+    .link {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: red;
+        }
+        &.active {
+            color: red;
+            pointer-events: none;
+        }
+    }
+    :global {
+        .svg-icon {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+    }
+    .name {
+        display: flex;
+        align-items: center;
+    }
+    .linkMore {
+        align-items: center;
+        display: flex;
+        height: inherit;
+        width: inherit;
+
+        span,
+        span:before,
+        span:after {
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 3px;
+            font-size: 0;
+            transition: background 0.2s ease;
+        }
+        span {
+            margin-left: 24px;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -12px;
+            }
+            &:after {
+                left: -24px;
+            }
+        }
+        &:hover {
+            span,
+            span:before,
+            span:after {
+                background-color: blue;
+            }
+        }
+    }
+    .dropdownList {
+        background: green;
+        border-radius: 8px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        display: none;
+        list-style: none;
+        margin: 0;
+        min-width: 200px;
+        padding: 15px 0;
+        position: absolute;
+        top: 52px;
+        z-index: 10;
+
+        &.opened {
+            display: block;
+        }
+
+        > li {
+            cursor: pointer;
+            transition: color 0.15s ease, background-color 0.15s ease;
+
+            &:not(:first-child) {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+.fakeWrapper {
+    height: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+
+    .menu {
+        position: static;
+    }
+}
