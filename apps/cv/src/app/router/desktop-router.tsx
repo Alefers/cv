@@ -22,7 +22,7 @@ export const getDesktopRouter = (): RouteObject[] => {
         },
         {
           path: appRoutes.svgs,
-          element: <SvgsPage />
+          element: <SvgsPage />,
         }
       ]
     }
