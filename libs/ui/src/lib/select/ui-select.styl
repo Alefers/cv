@@ -1,0 +1,248 @@
+.ui-select {
+    position: relative;
+    width: 100%;
+
+    &__outer {
+        baseInput(0 26px 0 20px);
+        position: relative;
+        cursor: pointer;
+
+        &--icon {
+            padding-left: 50px;
+        }
+        &--selected {
+            .ui-select {
+                &__outer-text {
+                    color: $inputColor;
+                }
+            }
+        }
+    }
+    &__outer-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        font-size: 16px;
+        color: $inputColor;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+    &__outer-text {
+        color: $inputPlaceholderColor;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__outer-arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 14px;
+        display: flex;
+        align-items: center;
+        color: $menuSectionBorder;
+        font-size: 14px;
+
+        .svg-icon {
+            transform: rotate(180deg);
+            transition: transform .15s ease;
+        }
+    }
+    &__inner {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding-top: 5px;
+        pointer-events: none;
+
+        & > * {
+            pointer-events: auto;
+        }
+        &.ui-select {
+            &__inner {
+                &--small {
+                    .ui-select {
+                        &__list-item {
+                            min-height: 34px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__list {
+        overflow: hidden;
+        border-radius: 8px;
+        width: 100%;
+        background: $white;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.21);
+        max-height: 190px;
+        overflow-y: auto;
+        scrollbar-color: rgba($accentMain, .4) transparent;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background: rgba($accentMain, .4);
+            transition: background-color .2s ease;
+        }
+    }
+    &__list-item {
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        min-height: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $dropDownTextColor;
+        transition: color .15s ease, background-color .15s ease;
+        user-select: none;
+
+        &:hover {
+            background-color: $dropDownTextHoverBg;
+            color: $dropDownTextHover;
+            cursor: pointer;
+        }
+        &--active {
+            background-color: $dropDownTextActiveBg;
+            color: $dropDownTextActiveColor;
+        }
+    }
+    &__list-item-icon {
+        width: 35px;
+        margin-right: 10px;
+    }
+    &__flag {
+        width: 28px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 3px;
+
+        img {
+            display: block;
+        }
+    }
+    &__search {
+        pointer-events: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        input {
+            height: 100%;
+            width: 100%;
+            background: none;
+            border: 0;
+            padding: 0 26px 0 21px;
+            font-weight: 400;
+            color: $inputColor;
+            outline: none;
+            font-size: 14px;
+
+            &:placeholder {
+                color: $inputPlaceholderColor;
+            }
+        }
+    }
+    &__actions {
+        display: none;
+    }
+    &__currency-item {
+        width: 100%;
+        display: flex;
+    }
+    &__currency-item-name {
+        width: calc(100% - 50px);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &__currency-item-code {
+        width: 50px;
+        text-align: right;
+    }
+    &.ui-select {
+        &--open {
+            .ui-select {
+                &__outer {
+                    border-color: $buttonMain !important;
+                }
+                &__outer-arrow {
+                    .svg-icon {
+                        transform: rotate(0deg);
+                    }
+                }
+                &__inner {
+                    display: block;
+                }
+            }
+            &.ui-select {
+                &--searchable {
+                    .ui-select {
+                        &__outer-icon,
+                        &__outer-text {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &--error {
+            .ui-select {
+                &__outer {
+                    border-color: $liveColor;
+                }
+            }
+        }
+        &--disabled {
+            .ui-select {
+                &__outer {
+                    pointer-events: none;
+                    opacity: .8;
+                    background-color: lighten($buttonDisabled, 50%);
+                    border-color: lighten($buttonDisabled, 50%);
+                }
+            }
+        }
+        &--small {
+            .ui-select {
+                &__outer {
+                    height: 40px;
+                    line-height: 38px;
+                    font-size: 12px;
+                    border-radius: 20px;
+                }
+                &__search {
+                    input {
+                        font-size: 12px;
+                    }
+                }
+                &__outer-arrow {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
