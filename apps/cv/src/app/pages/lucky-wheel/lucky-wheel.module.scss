@@ -1,0 +1,41 @@
+@import "variables";
+
+
+.luckyWheel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 80px 40px;
+}
+.wheelWrapper {
+    display: flex;
+    align-items: center;
+}
+.wheel {
+    position: relative;
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #0E9561;
+}
+.sector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    height: 60%;
+    width: 60%;
+
+    &:nth-child(3n) {
+        background: red;
+    }
+    &:nth-child(3n + 1) {
+        background: blue;
+    }
+    &:nth-child(3n + 2) {
+        background: violet;
+    }
+}
