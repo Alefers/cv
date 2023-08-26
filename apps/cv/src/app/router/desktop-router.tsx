@@ -4,7 +4,7 @@ import MobileAppLanding from '../pages/landings/mobile-app/mobile-app-landing';
 import MainPage from '../pages/main/main.page';
 import { appRoutes } from '@repo/helpers';
 import SvgsPage from '../pages/svgs/svgs.page';
-import LuckyWheelPage from '../pages/lucky-wheel/lucky-wheel.page';
+import LotteryPage from '../pages/lottery/loterry.page';
 
 
 export const getDesktopRouter = (): RouteObject[] => {
@@ -26,8 +26,8 @@ export const getDesktopRouter = (): RouteObject[] => {
           element: <SvgsPage />,
         },
         {
-          path: appRoutes.luckyWheel,
-          element: <LuckyWheelPage />,
+          path: appRoutes.lottery,
+          element: <LotteryPage />,
         }
       ]
     }

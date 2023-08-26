@@ -34,9 +34,9 @@ const Header: React.FC<HeaderProps> = (
             <SvgIcon icon={svgIconsMap.Buttons} />
             {__('Default_._Pages_._SVGs')}
           </Link>
-          <Link className={s.navLink} to={appRoutes.luckyWheel}>
+          <Link className={s.navLink} to={appRoutes.lottery}>
             <SvgIcon icon={svgIconsMap.Buttons} />
-            {__('Default_._Pages_._Lucky Wheel')}
+            {__('Default_._Pages_._Lottery')}
           </Link>
         </nav>
       </div>
