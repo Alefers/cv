@@ -25,6 +25,7 @@ export const setCookie = (name: string, value: string, options = {}) => {
   for (const optionKey in cookieOptions) {
     if (cookieOptions.hasOwnProperty(optionKey)) {
       updatedCookie += `; ${optionKey}`;
+      // @ts-ignore
       const optionValue = cookieOptions[optionKey];
       if (optionValue !== true) {
         updatedCookie += `=${optionValue}`;
@@ -99,7 +100,7 @@ const optionsToClear = [
 ];
 
 const optionLoad = {
-  [QaToolkitOption.cpResetTime]: (resetDate, props: SelectByQAToolkitProps) =>
+  [QaToolkitOption.cpResetTime]: (resetDate: unknown, props: SelectByQAToolkitProps) =>
     resetDate || props.realValue,
 };
 
@@ -111,9 +112,8 @@ interface SelectByQAToolkitProps {
 export const selectByQAToolkit = (props: SelectByQAToolkitProps) => {
   const optionValue = getCookie(props.option);
   if (optionValue) {
-    return optionLoad[props.option]
-      ? optionLoad[props.option](optionValue, props)
-      : optionValue;
+    // @ts-ignore
+    return optionLoad[props.option] ? optionLoad[props.option](optionValue, props) : optionValue;
   }
   return props.realValue;
 };
